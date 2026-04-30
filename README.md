@@ -1,5 +1,6 @@
-````md
 # Driver Drowsiness Alert System 🚗💤
+````md
+# Driver Alert System 🚗💤
 
 ## Overview
 The Driver Drowsiness Alert System is an Arduino-based safety project designed to monitor a driver’s eye state using an IR sensor. If the driver’s eyes remain closed for dangerous periods, the system provides staged warnings through a buzzer and automatically stops the vehicle motors to prevent accidents.

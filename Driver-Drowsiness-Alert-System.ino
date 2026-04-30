@@ -3,53 +3,42 @@
   
 */
 
-// ===============================
-// Pin Definitions
-// ===============================
-const int IR_SENSOR_PIN = 3;   // IR sensor input pin
-const int BUZZER_PIN = 8;      // Buzzer output pin
+const int IR_SENSOR_PIN = 3;   
+const int BUZZER_PIN = 8;      
 
-// Motor Driver Pins
+
 const int MOTOR_IN1 = 9;
 const int MOTOR_IN2 = 10;
 const int MOTOR_IN3 = 11;
 const int MOTOR_IN4 = 12;
 
-// ===============================
-// Timing Variables (in milliseconds)
+
 // ===============================
 const unsigned long STAGE1_TIME = 2000;   // 2 sec warning
 const unsigned long STAGE2_TIME = 4000;   // 4 sec stronger warning
 const unsigned long STOP_TIME   = 7000;   // 7 sec motor stop
 
-// ===============================
-// Global Variables
-// ===============================
+
 unsigned long eyesClosedStartTime = 0;  // Stores when eyes first closed
 bool eyesWereClosed = false;            // Tracks previous eye state
 
-// ===============================
-// Setup Function
-// ===============================
+
 void setup() {
 
-  // Sensor and buzzer configuration
+  
   pinMode(IR_SENSOR_PIN, INPUT);
   pinMode(BUZZER_PIN, OUTPUT);
 
-  // Motor pin configuration
+  
   pinMode(MOTOR_IN1, OUTPUT);
   pinMode(MOTOR_IN2, OUTPUT);
   pinMode(MOTOR_IN3, OUTPUT);
   pinMode(MOTOR_IN4, OUTPUT);
 
-  // Start motors initially
+  
   startMotors();
 }
 
-// ===============================
-// Main Loop Function
-// ===============================
 void loop() {
 
   // Read IR sensor state
@@ -102,13 +91,9 @@ void loop() {
     startMotors();            // Restart motors
   }
 
-  // Small delay for stable readings
   delay(50);
 }
 
-// ===============================
-// MOTOR FUNCTIONS
-// ===============================
 
 // Start motors (vehicle moving)
 void startMotors() {
